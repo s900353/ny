@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Document</title>
+   <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://s900353.github.io/d3-wordcloud/lib/d3/d3.js"></script>
+   <script src="https://s900353.github.io/d3-wordcloud/lib/d3/d3.layout.cloud.js"></script>
+   <script src="https://s900353.github.io/d3-wordcloud/d3.wordcloud.js"></script>
+  
+
+
+   </head>
+   <body>
+   <div id="wordcloud"></div>
+
+   <script type="text/javascript">
+   d3.csv("./gu.csv",function(data){
+   console.log(data);
+     d3.wordcloud()
+        .size([800, 400])
+        .selector('#wordcloud')
+        .words(data)
+        .start();
+   });
+   </script>
+
+   </body>
